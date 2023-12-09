@@ -5,6 +5,6 @@ setup(
     version='1.0',
     packages=['hub'],
     install_requires=[
-        'requests','evaluate'
+        'requests', 'evaluate', 'sklearn'
     ],
 )
