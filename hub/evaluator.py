@@ -1,4 +1,6 @@
 import evaluate
+from langchain.evaluation import load_evaluator
+from langchain.evaluation import JsonValidityEvaluator
 
 
 def frugalscore():
@@ -11,3 +13,8 @@ def accuracy(references, predictions):
     accuracy_metric = evaluate.load("accuracy")
     results = accuracy_metric.compute(references=references, predictions=predictions)
     return results
+
+def test_json(prediction):
+    evaluator = load_evaluator("json_validity")
+    result = evaluator.evaluate_strings(prediction=prediction)
+    print(result)
