@@ -17,4 +17,4 @@ def accuracy(references, predictions):
 def test_json(prediction):
     evaluator = load_evaluator("json_validity")
     result = evaluator.evaluate_strings(prediction=prediction)
-    print(result)
+    return result
